@@ -1,4 +1,4 @@
-package com.apps.nb2998.learning_dagger2
+package com.apps.nb2998.learningDagger2
 
 import org.junit.Test
 
