@@ -6,14 +6,17 @@ import javax.inject.Inject;
 
 public class Car {
     private static final String TAG = "Car";
-    Engine engine;
-    Wheels wheels;
+    private Engine engine;
+    private Wheels wheels;
 
     @Inject      // constructor injection
-    Car(Engine engine, Wheels wheels) {
+    public Car(Engine engine, Wheels wheels) {
         this.engine = engine;
         this.wheels = wheels;
     }
+
+    // can use field injection here too but prefer constructor wherever possible eg- members cant't be private
+    // field injection meant for frameworks that android instantiates like activities and fragments
 
     public void drive() {
         Log.d(TAG, "driving ");
