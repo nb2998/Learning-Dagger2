@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 //        car = carComponent.car  // constructor injection
 
         carComponent.inject(this); // field injection- tell dagger to take our activity and inject variables annotated with @Inject
+        // as activity doesn't have constructor so has to be injected manually via inject() on component
         car.drive();
     }
 }
