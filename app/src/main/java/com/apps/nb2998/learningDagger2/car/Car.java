@@ -1,4 +1,4 @@
-package com.apps.nb2998.learningDagger2;
+package com.apps.nb2998.learningDagger2.car;
 
 import android.util.Log;
 
@@ -28,7 +28,7 @@ public class Car {
 
     private static final String TAG = "Car";
 //    @Inject Engine engine; // 2nd this (field)
-    private  Engine engine;
+    private Engine engine;
     private Wheels wheels;
 
 //    @Inject  //1st this (constructor)

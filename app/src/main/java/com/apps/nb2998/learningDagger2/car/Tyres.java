@@ -1,8 +1,8 @@
-package com.apps.nb2998.learningDagger2;
+package com.apps.nb2998.learningDagger2.car;
 
 import android.util.Log;
 
-class Tyres {
+public class Tyres {
     public void inflate() {
         Log.d("TAG", "inflate: ");
     }

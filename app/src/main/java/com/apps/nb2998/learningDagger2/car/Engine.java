@@ -1,4 +1,4 @@
-package com.apps.nb2998.learningDagger2;
+package com.apps.nb2998.learningDagger2.car;
 
 import javax.inject.Inject;
 

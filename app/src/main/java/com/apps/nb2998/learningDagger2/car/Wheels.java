@@ -1,6 +1,4 @@
-package com.apps.nb2998.learningDagger2;
-
-import javax.inject.Inject;
+package com.apps.nb2998.learningDagger2.car;
 
 public class Wheels {
 

@@ -1,4 +1,8 @@
-package com.apps.nb2998.learningDagger2;
+package com.apps.nb2998.learningDagger2.dagger;
+
+import com.apps.nb2998.learningDagger2.car.Rims;
+import com.apps.nb2998.learningDagger2.car.Tyres;
+import com.apps.nb2998.learningDagger2.car.Wheels;
 
 import dagger.Module;
 import dagger.Provides;

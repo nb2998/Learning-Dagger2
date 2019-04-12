@@ -2,6 +2,9 @@ package com.apps.nb2998.learningDagger2
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.apps.nb2998.learningDagger2.car.Car
+import com.apps.nb2998.learningDagger2.dagger.CarComponent
+import com.apps.nb2998.learningDagger2.dagger.DaggerCarComponent
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {

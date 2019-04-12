@@ -1,6 +1,8 @@
-package com.apps.nb2998.learningDagger2;
+package com.apps.nb2998.learningDagger2.car;
 
 import android.util.Log;
+
+import com.apps.nb2998.learningDagger2.car.Car;
 
 import javax.inject.Inject;
 
