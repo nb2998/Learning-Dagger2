@@ -31,8 +31,14 @@ public class Car {
     private  Engine engine;
     private Wheels wheels;
 
-    @Inject  //1st this (constructor)
-    public Car(Wheels wheels) {
+//    @Inject  //1st this (constructor)
+//    public Car(Wheels wheels) {
+//        this.wheels = wheels;
+//    }
+
+    @Inject      // constructor injection
+    public Car(Engine engine, Wheels wheels) {
+        this.engine = engine;
         this.wheels = wheels;
     }
 
@@ -42,6 +48,7 @@ public class Car {
     }
 
     public void drive() {
+        engine.drive();
         Log.d(TAG, "driving ");
     }
 }
