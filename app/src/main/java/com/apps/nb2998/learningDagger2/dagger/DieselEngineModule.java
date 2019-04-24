@@ -5,6 +5,7 @@ import com.apps.nb2998.learningDagger2.car.Engine;
 
 import dagger.Binds;
 import dagger.Module;
+import dagger.Provides;
 
 //@Module
 //public class PetrolEngineModule {
@@ -20,13 +21,34 @@ import dagger.Module;
 //    // delete the function body, turn it to abstract method (hence, abstract class)
 //}
 
+//@Module
+//public abstract class DieselEngineModule {
+//
+//    @Binds
+//    abstract Engine bindEngine(DieselEngine engine);
+//    // takes a single argument which is an implementation for the interface defined as return type
+//
+//    // Also, since this is an abstract class, @Provides can't be used as provide methods need an instance of Module class which is not possible
+//    // instead static provide methods can be used
+//}
+
+// Part 7- injecting values at runtime
+
 @Module
-public abstract class DieselEngineModule {
+public class DieselEngineModule {
 
-    @Binds
-    abstract Engine bindEngine(DieselEngine engine);
-    // takes a single argument which is an implementation for the interface defined as return type
+    private int horsepower;
 
-    // Also, since this is an abstract class, @Provides can't be used as provide methods need an instance of Module class which is not possible
-    // instead static provide methods can be used
+    public DieselEngineModule(int horsepower) {
+        this.horsepower = horsepower;
+    }
+
+    // can't use binds now as it doesnt't support config ; back to provides
+    // and can't make method static as it depends on instance variable
+
+    @Provides
+    Engine providesEngine() {
+        return new DieselEngine(horsepower);
+    }
+
 }
