@@ -6,3 +6,5 @@ Learning the basics of dependency injection and [Dagger2](https://github.com/goo
 - Field injection (Aka Members injection)
 - Method injection
 - Module injection
+- Provides
+- Binds
