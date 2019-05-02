@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         // Part 8 using Component.Builder and BindsInstance to pass variable directly
         val carComponent: CarComponent = DaggerCarComponent.builder()
                 .horsepower(100)
+                .engineCapacity(1500)
                 .build()
         carComponent.inject(this)
         car.drive()
