@@ -31,16 +31,25 @@ class MainActivity : AppCompatActivity() {
         // create method not available- only avilable if no modules in the component takes arguments
         // use builder instead
 
-        val carComponent: CarComponent = DaggerCarComponent.builder()
-                .dieselEngineModule(DieselEngineModule(100))
-                .build()
-        carComponent.inject(this)
-        car.drive()
+//        val carComponent: CarComponent = DaggerCarComponent.builder()
+//                .dieselEngineModule(DieselEngineModule(100))
+//                .build()
+//        carComponent.inject(this)
+//        car.drive()
 
 
         // wheels method strikethrough as deprecated because instance of it cannot be created as all provides methods static
         // not necessary but to make it work - make the Wheels Module class abstract
         // benefit- dagger will not allow if all methods not abstract
         // therefore, if al methods of Module aare static make the class abstract!!
+
+
+//        **********************
+        // Part 8 using Component.Builder and BindsInstance to pass variable directly
+        val carComponent: CarComponent = DaggerCarComponent.builder()
+                .horsepower(100)
+                .build()
+        carComponent.inject(this)
+        car.drive()
     }
 }

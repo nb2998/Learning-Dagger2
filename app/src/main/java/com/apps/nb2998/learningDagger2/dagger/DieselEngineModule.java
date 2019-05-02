@@ -46,9 +46,26 @@ public class DieselEngineModule {
     // can't use binds now as it doesnt't support config ; back to provides
     // and can't make method static as it depends on instance variable
 
+//    @Provides
+//    Engine providesEngine() {
+//        return new DieselEngine(horsepower);
+//    }
+
+
+//    Part 8 using provides. This way we add it to the dependency graph and also means
+//    we can dagger can use it whenever needed also dagger than inject constructor
+
     @Provides
-    Engine providesEngine() {
-        return new DieselEngine(horsepower);
+    int provideHorsepower() {
+        return horsepower;
     }
 
+    @Provides
+    Engine providesEngine(DieselEngine engine) {
+        return engine;
+    }
+
+//    Now the horsepower module can be separated from Diesel Engine
+//    A more efficient way instead: Instead of passing hp value to Module and then module to the builder, we can pass it to builder directly
+//    (Done with Petrol Engine)
 }
