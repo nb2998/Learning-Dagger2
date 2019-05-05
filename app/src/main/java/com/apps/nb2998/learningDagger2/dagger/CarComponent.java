@@ -4,10 +4,12 @@ import com.apps.nb2998.learningDagger2.MainActivity;
 import com.apps.nb2998.learningDagger2.car.Car;
 
 import javax.inject.Named;
+import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
 
+@Singleton
 @Component(modules = {WheelsModule.class, PetrolEngineModule.class})
 // can either have PetrolEModule or DieselEModule
 public interface CarComponent {

@@ -26,18 +26,42 @@ public class Car {
     // METHOD INJECTION starts here
     // Order of execution Constructor -> Field -> Method
 
+//    private static final String TAG = "Car";
+////    @Inject Engine engine; // 2nd this (field)
+//    private Engine engine;
+//    private Wheels wheels;
+//
+////    @Inject  //1st this (constructor)
+////    public Car(Wheels wheels) {
+////        this.wheels = wheels;
+////    }
+//
+//    @Inject      // constructor injection
+//    public Car(Engine engine, Wheels wheels) {
+//        this.engine = engine;
+//        this.wheels = wheels;
+//    }
+//
+//    @Inject
+//    public void enableRemote(Remote remote) {
+//        remote.setListener(this);  // as field injection executed 1st car object
+//    }
+//
+//    public void drive() {
+//        engine.drive();
+//        Log.d(TAG, "driving ");
+//    }
+
     private static final String TAG = "Car";
-//    @Inject Engine engine; // 2nd this (field)
+    //    @Inject Engine engine; // 2nd this (field)
     private Engine engine;
     private Wheels wheels;
 
-//    @Inject  //1st this (constructor)
-//    public Car(Wheels wheels) {
-//        this.wheels = wheels;
-//    }
+    private Driver driver;
 
     @Inject      // constructor injection
-    public Car(Engine engine, Wheels wheels) {
+    public Car(Driver driver, Engine engine, Wheels wheels) {
+        this.driver = driver;
         this.engine = engine;
         this.wheels = wheels;
     }
@@ -49,6 +73,7 @@ public class Car {
 
     public void drive() {
         engine.drive();
-        Log.d(TAG, "driving ");
+        Log.d(TAG, driver + " drives " + this);
     }
+
 }

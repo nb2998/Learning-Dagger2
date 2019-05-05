@@ -11,9 +11,13 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity() {
 
     //    private lateinit var car: Car
-    @Inject
-    lateinit var car: Car  // field cannat be private or final for field injection
+//    @Inject
+//    lateinit var car: Car  // field cannat be private or final for field injection
     // but doing this not enough, car.drive() gives NPE
+
+    // Part 9 - 2 objects of Car
+    @Inject lateinit var car1: Car
+    @Inject lateinit var car2: Car
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,11 +50,23 @@ class MainActivity : AppCompatActivity() {
 
 //        **********************
         // Part 8 using Component.Builder and BindsInstance to pass variable directly
+//        val carComponent: CarComponent = DaggerCarComponent.builder()
+//                .horsepower(100)
+//                .engineCapacity(1500)
+//                .build()
+//        carComponent.inject(this)
+//        car.drive()
+
+
+
+        // PART 9
+
         val carComponent: CarComponent = DaggerCarComponent.builder()
                 .horsepower(100)
                 .engineCapacity(1500)
                 .build()
         carComponent.inject(this)
-        car.drive()
+        car1.drive()
+        car2.drive()
     }
 }
