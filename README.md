@@ -8,3 +8,4 @@ Learning the basics of dependency injection and [Dagger2](https://github.com/goo
 - Module injection
 - Provides
 - Binds
+- Component Builder and Binds Instance
