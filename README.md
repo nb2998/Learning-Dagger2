@@ -9,3 +9,4 @@ Learning the basics of dependency injection and [Dagger2](https://github.com/goo
 - Provides
 - Binds
 - Component Builder and Binds Instance
+- Singleton
